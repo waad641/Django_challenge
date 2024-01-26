@@ -11,17 +11,20 @@ architecture, providing a flexible and scalable solution for handling financial
 transactions. The project aims to demonstrate best practices in Django development
 API integration, and asynchronous task execution.
 
-Ths repository focus on the :
+This repository focus on the :
 # Producer App:
 
    1/Web Server: Manages incoming HTTP requests.
 Exposes API endpoints for CRUD operations on transactions.
 Listens to a webhook endpoint for processed data from the Consumer App.
+
    2/Django REST Framework (DRF):
 Implements a viewset for CRUD operations on transactions.
 Implements a webhook receiver to update transactions with processed data.
+
   3/Django Database:
 Stores transaction data.
+
    4/Celery Worker:
 Performs asynchronous processing for tasks initiated by the Consumer App.
 # Communication Flow:
