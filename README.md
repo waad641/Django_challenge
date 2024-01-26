@@ -10,3 +10,42 @@ seamless interaction between these two apps showcases a distributed system
 architecture, providing a flexible and scalable solution for handling financial 
 transactions. The project aims to demonstrate best practices in Django development
 API integration, and asynchronous task execution.
+
+
+# Consumer App:
+
+    1/Web Server:  Handles incoming HTTP requests from users.
+Exposes endpoints for users to view and submit transactions.
+Django Application:
+Contains views to render HTML pages for users.
+Sends requests to the Producer App to submit transactions.
+    2/Celery Worker:
+Asynchronously processes submitted transactions.
+Calls the Producer App's webhook with processed data.
+# Producer App:
+
+   1/Web Server: Manages incoming HTTP requests.
+Exposes API endpoints for CRUD operations on transactions.
+Listens to a webhook endpoint for processed data from the Consumer App.
+   2/Django REST Framework (DRF):
+Implements a viewset for CRUD operations on transactions.
+Implements a webhook receiver to update transactions with processed data.
+  3/Django Database:
+Stores transaction data.
+   4/Celery Worker:
+Performs asynchronous processing for tasks initiated by the Consumer App.
+# Communication Flow:
+
+*User interacts with the Consumer App's web interface.
+*Consumer App sends transaction data to the Producer App for storage.
+*Producer App stores the transaction in the database and initiates asynchronous processing.
+*Celery worker in the Consumer App processes the transaction asynchronously.
+*Once processing is complete, the Celery worker in the Consumer App sends processed data to the Producer App's webhook.
+*Producer App updates the transaction in the database with the processed data.
+
+# External Services:
+
+  1/Celery Broker (RabbitMQ or similar):
+Manages the message queue for Celery tasks.
+  2/Django Database Server:
+Hosts the databases for both Consumer and Producer Apps.
