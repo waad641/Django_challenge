@@ -11,17 +11,7 @@ architecture, providing a flexible and scalable solution for handling financial
 transactions. The project aims to demonstrate best practices in Django development
 API integration, and asynchronous task execution.
 
-
-# Consumer App:
-
-    1/Web Server:  Handles incoming HTTP requests from users.
-Exposes endpoints for users to view and submit transactions.
-Django Application:
-Contains views to render HTML pages for users.
-Sends requests to the Producer App to submit transactions.
-    2/Celery Worker:
-Asynchronously processes submitted transactions.
-Calls the Producer App's webhook with processed data.
+Ths repository focus on the :
 # Producer App:
 
    1/Web Server: Manages incoming HTTP requests.
@@ -45,7 +35,7 @@ Performs asynchronous processing for tasks initiated by the Consumer App.
 
 # External Services:
 
-  1/Celery Broker (RabbitMQ or similar):
+  1/Celery Broker (RabbitMQ ):
 Manages the message queue for Celery tasks.
   2/Django Database Server:
 Hosts the databases for both Consumer and Producer Apps.
