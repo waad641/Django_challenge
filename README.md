@@ -39,6 +39,9 @@ Performs asynchronous processing for tasks initiated by the Consumer App.
 # External Services:
 
   1/Celery Broker (RabbitMQ ):
+  
 Manages the message queue for Celery tasks.
+
   2/Django Database Server:
+  
 Hosts the databases for both Consumer and Producer Apps.
