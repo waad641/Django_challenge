@@ -9,13 +9,13 @@ The Producer App is a crucial part of the banking system that handles the storag
 # 3.Database Model:
 
    - The `BankTransaction` model in `models.py` defines the structure of bank transactions.
-   - 
+    
    - It includes fields for the account number, transaction amount, transaction date, and processed data stored as JSON.
 
 # 4.Serializer:
 
    - The `BankTransactionSerializer` in `serializers.py` uses Django Rest Framework's `ModelSerializer`.
-   - 
+     
    - It automatically generates serialization logic based on the `BankTransaction` model, serializing all fields.
 
 # 5.API Endpoints and Routing:
@@ -41,7 +41,7 @@ The Producer App is a crucial part of the banking system that handles the storag
 # 8.HTML Rendering View:
 
    - The `transaction_list_html` view renders an HTML template (`transaction_list.html`) with a list of transactions.
-   - 
+     
    - It retrieves transactions from the database and passes them to the template for rendering.
 
 # Note to the Reader:
