@@ -13,5 +13,5 @@ class BankTransactionSerializer(serializers.ModelSerializer):
 # It automatically generates serialization logic based on the BankTransaction model.
 
 # Meta class is used to provide additional information to the serializer.
-# In this case, it specifies the model to be serialized (BankTransaction) and 
+# In the case of the producer app , it specifies the model to be serialized (BankTransaction) and 
 # indicates that all fields from the model should be included in the serialization.
